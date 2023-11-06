@@ -1,0 +1,118 @@
+<!-- Course: SENG 513 -->
+<!-- Date: OCT 23, 2023 -->
+<!-- Assignment 2 -->
+<!-- Name: Katherine Knauss -->
+<!-- UCID: 30087243 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media= "screen and (min-width: 641px)" type="text/css" href="./style.css">
+    <link rel="stylesheet" media= "screen and (max-width: 640px)" type="text/css" href="./styleMobile.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <title>Elemental Endeavor: Earth, Water, Fire</title>
+</head>
+<body>
+    <header>
+        <h1>Elemental Endeavor: Earth, Water, Fire</h1>
+    </header>
+
+    <!-- buttons that control user elements (default fire) -->
+    <div id="container">
+        <h2 class = "selectElementMobile" style="padding-left: 5%;">Select Your Element:</h2>
+        <div id="options">
+            <h2 class="selectElement">Select Your Element:</h2>
+            <button class = "btn-grad-red" id="fire-button">Fire</button>
+            <br>
+            <button class = "btn-grad-blue" id="water-button">Water</button>
+            <br>
+            <button class = "btn-grad-green" id="earth-button">Earth</button>
+        </div>
+
+        <!-- basic game board based on tic tac toe -->
+        <div id="tic-tac-toe">
+            <div class="cell" id="cell-0"></div>
+            <div class="cell" id="cell-1"></div>
+            <div class="cell" id="cell-2"></div>
+            <div class="cell" id="cell-3"></div>
+            <div class="cell" id="cell-4"></div>
+            <div class="cell" id="cell-5"></div>
+            <div class="cell" id="cell-6"></div>
+            <div class="cell" id="cell-7"></div>
+            <div class="cell" id="cell-8"></div>
+            <div class="cell" id="cell-9"></div>
+            <div class="cell" id="cell-10"></div>
+            <div class="cell" id="cell-11"></div>
+            <div class="cell" id="cell-12"></div>
+            <div class="cell" id="cell-13"></div>
+            <div class="cell" id="cell-14"></div>
+            <div class="cell" id="cell-15"></div>
+            <div class="cell" id="cell-16"></div>
+            <div class="cell" id="cell-17"></div>
+            <div class="cell" id="cell-18"></div>
+            <div class="cell" id="cell-19"></div>
+            <div class="cell" id="cell-20"></div>
+            <div class="cell" id="cell-21"></div>
+            <div class="cell" id="cell-22"></div>
+            <div class="cell" id="cell-23"></div>
+            <div class="cell" id="cell-24"></div>
+        </div>
+
+        <!-- whos turn is it -->
+        <div id="info">
+            <h3>Player <span id="player-turn">1</span>'s Turn</h3>
+            <button class="btn-grad-dark">Instructions</button>
+        </div>
+    </div>
+
+    <!-- instructions modal for user -->
+    <div id="modal" class="modal">
+        <div class="modal-content scrollable-content">
+            <span class="close" id="close-btn">&times;</span>
+            <h2 style="text-align: center">Instructions</h2>
+            <h4>Setup:</h4>
+            <ol>
+                <li>Uses a 3x3 grid, similar to Tic Tac Toe.</li>
+                <li>Each player has a set of elemental options, with three different elements: fire, water, and earth. Each element has a unique symbol.
+                </li>
+            </ol>
+
+            <h4>Gameplay:</h4>
+            <ol>
+                <li>Players take turns placing one of their elemental tokens on an empty* space in the grid.</li>
+                <li>Instead of the traditional "X" and "O," they place their elemental tokens with the respective elements on them.</li>
+            </ol>
+            <p>*A player may replace an opponent's token with their own if the their token defeats their opponent's token, but a player cannot play on a space that was played upon in the previous round.</p>
+            <h4>Elemental Interactions:</h4>
+            <!-- <ol> -->
+                <p>Each element has strengths and weaknesses against the others, creating a tactical aspect to the game. For example:</p>
+                <ul>
+                    <li>Fire beats Earth.</li>
+                    <li>Earth beats Water.</li>
+                    <li>Water beats Fire.</li>
+                
+                </ul>
+                <p>If a player places a token that defeats the opposing element in a row, they can remove the opponent's token from that spot and replace it with their own.</p>
+            <!-- </ol> -->
+
+            <h4>Winning:</h4>
+            <p>The first player to connect three of their own elemental tokens in a row wins the game.</p>
+        </div>
+    </div>
+
+    
+    <div id="winner-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-winner-modal">&times;</span>
+            <h2>Player <span id="winner-player">1</span> Won!</h2>
+            <button id="exit-button">Exit</button>
+        </div>
+    </div>
+   
+    <!-- calling the game logic javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
