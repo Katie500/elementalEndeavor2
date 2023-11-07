@@ -33,7 +33,7 @@
  const waterButton = document.getElementById('water-button');
  const earthButton = document.getElementById('earth-button');
 
- // buttons logic
+ // Logic for buttons that changes the element of a player
  fireButton.addEventListener('click', () => {
      imageClick = '1';
  });
@@ -57,6 +57,7 @@
              previouslyPlayed = cell;
 
              // Check for a winner after each move
+             //Winner modal ANIMATION
              if (checkForWinner()) {
              } else {
                  // Switch to the other player
@@ -78,6 +79,7 @@
      const source = imageElement.getAttribute('src');
 
     //check if current cell was previously played to prevent loops
+    //Checking the kinds of COLLISIONS that are allowed to occur
     if(cell === previouslyPlayed)
     {
        return false;
@@ -113,6 +115,7 @@
          
      ];
 
+    //CUSTOM ALGORITHM 
     //check all five combinations
      for (const combo of winningCombinations) {
          const [a, b, c, d, e] = combo;
